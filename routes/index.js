@@ -1,6 +1,6 @@
-const router = require ('express').Router();
+const router = require ('express').Router(); // Import Express Router
 
-router.use('/', require('./swagger'));
+router.use('/', require('./swagger')); // 
 
 router.get('/',(req, res) => {
     //swagger.tag=['Users']
