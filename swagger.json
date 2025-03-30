@@ -5,7 +5,7 @@
     "description": "Users Api",
     "version": "1.0.0"
   },
-  "host": "cse341-project1-8bmx.onrender.com",
+  "host": "cse341-project1-1-nwc5.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"

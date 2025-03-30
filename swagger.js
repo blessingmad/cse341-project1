@@ -6,7 +6,7 @@ const doc = {
         title: 'Users Api', // API Title
         description: 'Users Api' // description
     },
-    host: 'localhost:3001', // localhost
+    host: 'cse341-project1-1-nwc5.onrender.com', // localhost
     schemes: ['https', 'http'] // supported protocols
 };
 
