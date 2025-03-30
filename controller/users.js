@@ -46,14 +46,14 @@ const createUser = async (req, res) => {
     };
      
     const updateUser = async (req, res) => {
-        const userId = new ObjectId(req. params.id);
+        const userId = new ObjectId(params.id);
         const user = {
             username: req.body.username,
             email: req.body.email,
             name: req.body.name,
             ipaddress: req.body.ipaddress
         };
-        const response = await mongodb.getDatabase().db().collection('users').replaceOne({_id: userId}, user);
+        const response = await mongodb.getDatabase().collection('users').replaceOne({_id: userId}, user);
         if (response.modifiedCount > 0) {
             res.status(204).send();
         } 
@@ -63,8 +63,8 @@ const createUser = async (req, res) => {
     };
 
 const deleteUser = async (req, res) => {
-    const UserId = new ObjectId(req, params.id);
-    const response = await mongodb.getDatabase().db().collection('users').remove({_id: userId}, true);
+    const userId = new ObjectId(req, params.id);
+    const response = await mongodb.getDatabase ().collection('users').deleteOne({_id: userId});
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {
