@@ -11,20 +11,22 @@ const app = express();
 const port = process.env.PORT || 3001;  //Define port
 
 
-app.use('/', require('./routes')); // use route handlers from routes module
+
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
-     res.setHeader('Acceess-Control-Allow-Origin', '*');
+     res.setHeader('Access-Control-Allow-Origin', '*');
      res.setHeader(
         'Access-Control-Allow-Headers',
         'Origin, X-Requested-Width, Content-Type, Accept, Z-key'
      );
-     res.setHeader('Access-Control-Allow-Method', 'GET','POST', 'DELETE', 'OPTIONS');
+     res.setHeader('Access-Control-Allow-Method', 'GET, POST, PUT, DELETE, OPTIONS');
      next();
 });
 
 // initiate database connections
+app.use('/', require('./routes')); // use route handlers from routes module
+
 mongodb.initDb((err )=> {
     if (err){
         console.log;
